@@ -19,8 +19,9 @@ class ConferenceCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('city')->setMaxLength(255);
+        yield TextField::new('city');
         yield IntegerField::new('year')->setFormTypeOptions(['attr' => ['max' => 9999]]);
+        yield TextField::new('slug');
         yield BooleanField::new('isInternational');
     }
 }
